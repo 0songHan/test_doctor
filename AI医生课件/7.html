@@ -1,0 +1,1114 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="img/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>第七章:在线部分 - AI医生 V3.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#71" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="." title="AI医生 V3.0" class="md-header__button md-logo" aria-label="AI医生 V3.0" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI医生 V3.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第七章:在线部分
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <img src="assets/images/logo.svg" height="45px" alt="logo">
+
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="AI医生 V3.0" class="md-nav__button md-logo" aria-label="AI医生 V3.0" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    AI医生 V3.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.html" class="md-nav__link">
+        第一章:背景介绍及AI医生架构
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.html" class="md-nav__link">
+        第二章:项目工具介绍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.html" class="md-nav__link">
+        第三章:neo4j图数据库
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.html" class="md-nav__link">
+        第四章:离线部分
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.html" class="md-nav__link">
+        第五章:命名实体审核任务
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.html" class="md-nav__link">
+        第六章:命名实体识别任务
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第七章:在线部分
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="7.html" class="md-nav__link md-nav__link--active">
+        第七章:在线部分
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 在线部分简要分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-werobot" class="md-nav__link">
+    7.2 werobot服务构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3 主要逻辑服务
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 主要逻辑服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第一步：导入必备工具和配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j" class="md-nav__link">
+    第二步：完成查询neo4j数据库的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第三步：编写主要逻辑处理类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第四步：编写服务中的主函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn" class="md-nav__link">
+    第五步：使用gunicorn启动服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第六步：编写测试脚本并进行测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    7.4 句子主题相关任务
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.html" class="md-nav__link">
+        第八章:句子主题相关任务
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.html" class="md-nav__link">
+        第九章:系统联调与测试
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.html" class="md-nav__link">
+        附录:环境安装部署手册
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 在线部分简要分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-werobot" class="md-nav__link">
+    7.2 werobot服务构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3 主要逻辑服务
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 主要逻辑服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第一步：导入必备工具和配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j" class="md-nav__link">
+    第二步：完成查询neo4j数据库的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第三步：编写主要逻辑处理类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第四步：编写服务中的主函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gunicorn" class="md-nav__link">
+    第五步：使用gunicorn启动服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第六步：编写测试脚本并进行测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    7.4 句子主题相关任务
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>第七章:在线部分</h1>
+
+<h2 id="71">7.1 在线部分简要分析<a class="headerlink" href="#71" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>了解在线部分的核心组成。</li>
+<li>了解各个核心组成部分的作用。</li>
+</ul>
+</li>
+<li>
+<p>在线部分架构图：</p>
+</li>
+</ul>
+<p><img style="margin: 0px 30px 0px -30px" src="./img/doctorAI_online.png"></p>
+<ul>
+<li>
+<p>在线部分简要分析：</p>
+<ul>
+<li>根据架构图，在线部分的核心由三个服务组成，分别是werobot服务，主要逻辑服务，句子相关模型服务。这三个服务贯穿连接整个在线部分的各个模块。</li>
+</ul>
+</li>
+<li>
+<p>werobot服务作用：</p>
+<ul>
+<li>用于连接微信客户端与后端服务，向主要逻辑服务发送用户请求，并接收结构返回给用户。</li>
+</ul>
+</li>
+<li>
+<p>主要逻辑服务作用：</p>
+<ul>
+<li>用于处理核心业务逻辑，包括会话管理，请求句子相关模型服务，查询图数据库，调用Unit API等。</li>
+</ul>
+</li>
+<li>
+<p>句子相关模型服务：</p>
+<ul>
+<li>用于封装训练好的句子相关判断模型，接收来自主要逻辑服务的请求，返回判断结果。</li>
+</ul>
+</li>
+</ul>
+<h2 id="72-werobot">7.2 werobot服务构建<a class="headerlink" href="#72-werobot" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>掌握werobot服务的构建过程。</li>
+</ul>
+</li>
+<li>
+<p>werobot服务的构建过程可分为四步：</p>
+<ul>
+<li>第一步：获取服务器公网IP</li>
+<li>第二步：配置微信公众号</li>
+<li>第三步：使用werobot启动服务脚本</li>
+<li>第四步：使用微信公众号进行测试</li>
+</ul>
+</li>
+<li>
+<p>第一步：获取服务器公网IP</p>
+<ul>
+<li>
+<p>登陆阿里云官网(<a href="https://www.aliyun.com/product/ecs">https://www.aliyun.com/product/ecs</a>):
+<center><img src="./img/alibaba1.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>进行基本配置，选择所在地域，实例类型，镜像，存储，购买时长
+<center><img src="./img/alibaba2.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>选择网络和安全组(默认配置)
+<center><img src="./img/alibaba3.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>设置密码，实例名称，主机名
+<center><img src="./img/alibaba4.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>配置分组设置(默认配置)
+<center><img src="./img/alibaba5.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>确认订单并支付</p>
+</li>
+</ul>
+<p><center><img src="./img/alibaba6.png" height="auto" width="auto"/></center></p>
+<ul>
+<li>查看服务器公网IP
+<center><img src="./img/20190114.png" height="auto" width="auto"/></center></li>
+</ul>
+</li>
+<li>
+<p>第二步：使用公网IP配置微信公众号</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>注册微信订阅号(<a href="https://mp.weixin.qq.com">https://mp.weixin.qq.com</a>), 并在基本配置中进行URL和Token的设定</li>
+</ul>
+</blockquote>
+<p><center><img src="./img/weixin1.png" height="auto" width="auto"/></center></p>
+<ul>
+<li>
+<p>第三步：使用werobot启动服务脚本</p>
+<ul>
+<li>
+<p>安装werobot
+<div class="highlight"><pre><span></span><code>pip install werobot
+</code></pre></div></p>
+</li>
+<li>
+<p>进行启动脚本的编写 </p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 导入werobot和发送请求的requests</span>
+<span class="kn">import</span> <span class="nn">werobot</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># 主要逻辑服务请求地址</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://161.117.187.37:5000/v1/main_serve/&quot;</span>
+
+<span class="c1"># 服务超时时间</span>
+<span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># 声明微信访问请求【框架将辅助完成微信联通验证】</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">werobot</span><span class="o">.</span><span class="n">WeRoBot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;doctoraitoken&quot;</span><span class="p">)</span>
+
+<span class="c1"># 设置所有请求（包含文本、语音、图片等消息）入口</span>
+<span class="nd">@robot</span><span class="o">.</span><span class="n">handler</span>
+<span class="k">def</span> <span class="nf">doctor</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># 获得用户uid</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">source</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># 检查session，判断该用户是否第一次发言</span>
+        <span class="c1"># 初始session为{}</span>
+        <span class="c1"># 如果session中没有{uid:&quot;1&quot;}</span>
+        <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="c1"># 将添加{uid:&quot;1&quot;}</span>
+            <span class="n">session</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+            <span class="c1"># 并返回打招呼用语</span>
+            <span class="k">return</span> <span class="s1">&#39;您好，我是智能客服小艾，有什么需要帮忙的吗?&#39;</span>
+        <span class="c1"># 获取message中的用户发言内容</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c1"># 这里使用try...except是因为我用户很可能出现取消关注又重新关注的现象</span>
+        <span class="c1"># 此时通过session判断，该用户并不是第一次发言，会获取message.content</span>
+        <span class="c1"># 但用户其实又没有说话，获取message.content时会报错</span>
+        <span class="c1"># 该情况也是直接返回打招呼用语</span>
+        <span class="k">return</span> <span class="s1">&#39;您好，我是智能客服小艾，有什么需要帮忙的吗 ?&#39;</span>
+    <span class="c1"># 获得发送主要逻辑服务的数据体</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span> <span class="n">uid</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text</span><span class="p">}</span>
+    <span class="c1"># 向主要逻辑服务发送post请求</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">)</span>
+    <span class="c1"># 返回主要逻辑服务的结果</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;出现异常：&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;对不起，机器人客服正在休息。..&quot;</span>
+
+<span class="c1"># 让服务器监听在 0.0.0.0:80</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;HOST&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0.0.0.0&quot;</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;PORT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># 代码位置：/data/wr.py</span>
+</code></pre></div>
+* 启动服务脚本</p>
+<p>```shell
+python /data/wr.py</p>
+</li>
+</ul>
+<p># 也可以使用gunicorn启动该脚本
+    gunicorn -w 1 wr:robot.wsgi
+  ```</p>
+<ul>
+<li>
+<p>第四步：使用微信进行测试
+  <img alt="avatar" src="img/20190114_1.jpeg" /></p>
+</li>
+<li>
+<p>小节总结：</p>
+<ul>
+<li>学习了werobot服务的构建过程：<ul>
+<li>第一步：获取服务器公网IP</li>
+<li>第二步：配置微信公众号</li>
+<li>第三步：使用werobot启动服务脚本</li>
+<li>第四步：使用微信公众号进行测试</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="73">7.3 主要逻辑服务<a class="headerlink" href="#73" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>了解该服务中的主要逻辑。</li>
+<li>掌握构建主要逻辑服务的过程。</li>
+</ul>
+</li>
+<li>
+<p>主要逻辑图：
+<center><img src="./img/doctorAI_luoji.png" height="auto" width="auto"/></center></p>
+</li>
+<li>
+<p>逻辑图分析：</p>
+<ul>
+<li>
+<p>主要逻辑服务接收werobot发送的请求后，根据用户id查询redis查找用户上一次说过的话，根据结果判断是否为他的第一句。</p>
+</li>
+<li>
+<p>如果是第一句话，直接查询数据库，判断句子中是否包含症状实体，并返回该症状连接的疾病，并填充在规则对话模版中，如果查询不到则调用Unit API返回结果。</p>
+</li>
+<li>
+<p>如果不是该用户的第一句话，则连同上一句话的内容一起请求句子相关模型服务，判断两句话是否讨论同一主题，如果是，则继续查询图数据库，如果不是，使用unit api返回结果。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>构建主要逻辑服务的步骤：</p>
+<ul>
+<li>第一步：导入必备工具和配置</li>
+<li>第二步：完成查询neo4j数据库的函数</li>
+<li>第三步：编写主要逻辑处理类</li>
+<li>第四步：编写服务中的主函数</li>
+<li>第五步：使用gunicorn启动服务</li>
+<li>第六步：编写测试脚本并进行测试：</li>
+</ul>
+</li>
+</ul>
+<h3 id="_1">第一步：导入必备工具和配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 服务框架使用Flask</span>
+<span class="c1"># 导入必备的工具</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># 导入发送http请求的requests工具</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># 导入操作redis数据库的工具</span>
+<span class="kn">import</span> <span class="nn">redis</span>
+
+<span class="c1"># 导入加载json文件的工具</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># 导入已写好的Unit API调用文件</span>
+<span class="kn">from</span> <span class="nn">unit</span> <span class="kn">import</span> <span class="n">unit_chat</span>
+
+<span class="c1"># 导入操作neo4j数据库的工具</span>
+<span class="kn">from</span> <span class="nn">neo4j</span> <span class="kn">import</span> <span class="n">GraphDatabase</span>
+
+<span class="c1"># 从配置文件中导入需要的配置</span>
+<span class="c1"># NEO4J的连接配置</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">NEO4J_CONFIG</span>
+<span class="c1"># REDIS的连接配置</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">REDIS_CONFIG</span>
+<span class="c1"># 句子相关模型服务的请求地址</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">model_serve_url</span>
+<span class="c1"># 句子相关模型服务的超时时间</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">TIMEOUT</span>
+<span class="c1"># 规则对话模版的加载路径</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">reply_path</span>
+<span class="c1"># 用户对话信息保存的过期时间</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">ex_time</span>
+
+<span class="c1"># 建立REDIS连接池</span>
+<span class="n">pool</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">ConnectionPool</span><span class="p">(</span><span class="o">**</span><span class="n">REDIS_CONFIG</span><span class="p">)</span>
+
+<span class="c1"># 初始化NEO4J驱动对象</span>
+<span class="n">_driver</span> <span class="o">=</span> <span class="n">GraphDatabase</span><span class="o">.</span><span class="n">driver</span><span class="p">(</span><span class="o">**</span><span class="n">NEO4J_CONFIG</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码位置：/data/doctor_online/main_serve/app.py</p>
+</li>
+<li>
+<p>配置文件内容如下：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">REDIS_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="mi">6379</span>
+<span class="p">}</span>
+
+
+<span class="n">NEO4J_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;bolt://0.0.0.0:7687&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;auth&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;neo4j&quot;</span><span class="p">,</span> <span class="s2">&quot;********&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;encrypted&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+
+<span class="n">model_serve_url</span> <span class="o">=</span> <span class="s2">&quot;http://0.0.0.0:5001/v1/recognition/&quot;</span>
+
+<span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">reply_path</span> <span class="o">=</span> <span class="s2">&quot;./reply.json&quot;</span>
+
+<span class="n">ex_time</span> <span class="o">=</span> <span class="mi">36000</span>
+</code></pre></div>
+<ul>
+<li>代码位置：/data/doctor_online/main_serve/config.py</li>
+<li>规则对话模版文件reply.json内容如下：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+&quot;1&quot;: &quot;亲爱的用户，在线医生一个医患问答机器人，请您说一些当前的症状吧！&quot;,
+&quot;2&quot;: &quot;根据您当前的症状描述，您可能患有以下疾病，%s, 再想想还有更多的症状吗?&quot;,
+&quot;3&quot;: &quot;对不起，您所说的内容超出了在线医生的知识范围。请尝试换一些描述方式！&quot;,
+&quot;4&quot;: &quot;您的这次描述并没有给我带来更多信息，请您继续描述您的症状。&quot;
+}
+</code></pre></div>
+<ul>
+<li>代码位置：/data/doctor_online/main_serve/reply.json</li>
+</ul>
+<h3 id="neo4j">第二步：完成查询neo4j数据库的函数<a class="headerlink" href="#neo4j" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">query_neo4j</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    description: 根据用户对话文本中的可能存在的症状查询图数据库。</span>
+<span class="sd">    :param text: 用户的输入文本。</span>
+<span class="sd">    :return: 用户描述的症状对应的疾病列表。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 开启一个session操作图数据库 </span>
+    <span class="k">with</span> <span class="n">_driver</span><span class="o">.</span><span class="n">session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+         <span class="c1"># cypher语句，匹配句子中存在的所有症状节点，</span>
+         <span class="c1"># 保存这些节点并逐一通过关系dis_to_sym进行对应病症的查找，返回找到的疾病名字列表。</span>
+        <span class="n">cypher</span> <span class="o">=</span> <span class="s2">&quot;MATCH(a:Symptom) WHERE(</span><span class="si">%r</span><span class="s2"> contains a.name) WITH </span><span class="se">\</span>
+<span class="s2">                  a MATCH(a)-[r:dis_to_sym]-(b:Disease) RETURN b.name LIMIT 5&quot;</span> <span class="o">%</span><span class="n">text</span>
+        <span class="c1"># 运行这条cypher语句</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cypher</span><span class="p">)</span>
+        <span class="c1"># 从record对象中获得结果列表</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">record</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码位置：/data/doctor_online/main_serve/app.py</p>
+</li>
+<li>
+<p>调用：
+<div class="highlight"><pre><span></span><code>if __name__ == &quot;__main__&quot;:
+    text = &quot;我最近腹痛!&quot;
+    result = query_neo4j(text)
+    print(&quot;疾病列表：&quot;, result)
+</code></pre></div></p>
+</li>
+<li>
+<p>输出效果：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>疾病列表：[&#39;胃肠道癌转移卵巢&#39;, &#39;胃肠道功能紊乱&#39;, &#39;胃肠积液&#39;, &#39;胃肠型食物中毒&#39;, &#39;胃结核&#39;]
+</code></pre></div>
+<h3 id="_2">第三步：编写主要逻辑处理类<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 实现处理不同分支的函数</span>
+<span class="k">class</span> <span class="nc">Handler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">cur_text</span><span class="p">,</span> <span class="n">pre_text</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">replay</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param uid: 用户唯一标示uid</span>
+<span class="sd">        :param cur_text: 该用户本次输入的文本</span>
+<span class="sd">        :param pre_text: 该用户上次输入的文本</span>
+<span class="sd">        :param r: redis数据库的连接对象</span>
+<span class="sd">        :param reply: 规则对话模版加载到内存的对象(字典)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span> <span class="o">=</span> <span class="n">cur_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pre_text</span> <span class="o">=</span> <span class="n">pre_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reply</span> <span class="o">=</span> <span class="n">replay</span>
+
+    <span class="k">def</span> <span class="nf">first_sentence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;首句处理函数&quot;&quot;&quot;</span>
+        <span class="c1"># 直接查询图数据库，并获得结果</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">query_neo4j</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">)</span>
+
+        <span class="c1"># 判断结果为空列表，则直接使用UnitAPI返回</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">unit_chat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">)</span>
+
+        <span class="c1"># 将s存储为&quot;上一次返回的疾病&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">hset</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;previous_d&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="c1"># 设置过期时间</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">expire</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="n">ex_time</span><span class="p">)</span>
+
+        <span class="c1"># 将列表转化为字符串，添加到规则对话模版中返回</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;，&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reply</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">res</span>
+
+    <span class="k">def</span> <span class="nf">non_first_sentence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        description: 非首句处理函数</span>
+<span class="sd">        :return: 根据逻辑图返回非首句情况下的输出语句</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 尝试请求模型服务，若失败则打印错误结果</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pre_text&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_text</span><span class="p">,</span> <span class="s1">&#39;cur_text&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">}</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">model_serve_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+                <span class="c1"># 如果判断这一句和上一句没有关联，则进入百度闲聊</span>
+                <span class="c1"># return unit_chat(self.cur_text)</span>
+                <span class="c1"># 还可以把这次输入当作单独一次对待</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_sentence</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;模型异常：&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">unit_chat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">)</span>
+
+        <span class="c1"># 继续查询图数据库，并获得结果</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">query_neo4j</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">)</span>
+        <span class="c1"># 判断结果为空列表，则直接使用UnitAPI返回</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span> <span class="k">return</span> <span class="n">unit_chat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cur_text</span><span class="p">)</span>
+
+        <span class="c1"># 若结果不为空，获取上一次已回复的疾病pre_disease</span>
+        <span class="n">pre_disease</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">hget</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;previous_d&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pre_disease</span><span class="p">:</span>
+            <span class="c1"># new_disease是本次需要存储的疾病，是已经存储的疾病与本次查询到疾病的并集</span>
+            <span class="n">new_disease</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">|</span><span class="nb">set</span><span class="p">(</span><span class="n">pre_disease</span><span class="p">))</span>
+            <span class="c1"># res是需要返回的疾病，是本次查询到的疾病与已经存储的疾病的差集</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">pre_disease</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 如果pre_disease为空，则它们相同都是本次查询结果s</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+            <span class="n">new_disease</span> <span class="o">=</span> <span class="n">res</span>
+
+        <span class="c1"># 存储new_disease覆盖之前的pre_disease</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">hset</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;previous_d&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">new_disease</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">expire</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="n">ex_time</span><span class="p">)</span>
+
+        <span class="c1"># 将列表转化为字符串，添加到规则对话模版中返回</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reply</span><span class="p">[</span><span class="s1">&#39;4&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;，&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reply</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">res</span>
+</code></pre></div>
+<ul>
+<li>代码位置：/data/doctor_online/main_serve/app.py</li>
+</ul>
+<h3 id="_3">第四步：编写服务中的主函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 设定主要逻辑服务的路由和请求方法</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/v1/main_serve/&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">main_serve</span><span class="p">():</span>
+    <span class="c1"># 接收werobot服务发送的请求</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;uid&#39;</span><span class="p">]</span>
+    <span class="n">cur_text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+
+    <span class="c1"># 从redis连接池中获得一个活跃连接</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">connection_pool</span><span class="o">=</span><span class="n">pool</span><span class="p">)</span>
+
+    <span class="c1"># 根据用户的uid获取是否存在上一句话</span>
+    <span class="n">pre_text</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">hget</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;previous&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 设置当前的输入为`上一句话`</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">hset</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;previous&#39;</span><span class="p">,</span> <span class="n">cur_text</span><span class="p">)</span>
+
+    <span class="c1"># 获取对话模板</span>
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">reply_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
+
+    <span class="c1"># 构造handler，根据是否是第一次请求实现逻辑</span>
+    <span class="n">handler</span> <span class="o">=</span> <span class="n">Handler</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">cur_text</span><span class="p">,</span> <span class="n">pre_text</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+
+    <span class="c1"># 如果pre_text存在，说明不是第一句话</span>
+    <span class="k">if</span> <span class="n">pre_text</span><span class="p">:</span>
+        <span class="c1"># 调用non_first_sentence方法</span>
+        <span class="k">return</span> <span class="n">handler</span><span class="o">.</span><span class="n">non_first_sentence</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># 否则调用first_sentence()方法</span>
+        <span class="k">return</span> <span class="n">handler</span><span class="o">.</span><span class="n">first_sentence</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="gunicorn">第五步：使用gunicorn启动服务<a class="headerlink" href="#gunicorn" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">gunicorn</span> <span class="o">-</span><span class="n">w</span> <span class="mi">1</span> <span class="o">-</span><span class="n">b</span> <span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">5000</span> <span class="n">app</span><span class="p">:</span><span class="n">app</span>
+<span class="c1"># -w 代表开启的进程数，我们只开启一个进程</span>
+<span class="c1"># -b 服务的IP地址和端口</span>
+<span class="c1"># app:app 是指执行的主要对象位置，在app.py中的app对象</span>
+</code></pre></div>
+<ul>
+<li>代码位置：在/data/doctor_online/main_serve/路径下执行。</li>
+</ul>
+<h3 id="_4">第六步：编写测试脚本并进行测试<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>编写测试脚本：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># 定义请求url和传入的data</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://0.0.0.0:5000/v1/main_serve/&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span><span class="s2">&quot;13424&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;头晕&quot;</span><span class="p">}</span>
+
+<span class="c1"># 向服务发送post请求</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># 打印返回的结果</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>运行脚本：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>python test.py
+</code></pre></div>
+<ul>
+<li>输出效果：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>根据您当前的症状描述，您可能患有以下疾病，中毒，虫媒传染病，小儿肥厚型心肌病，血红蛋白E病，铍中毒，再想想还有更多的症状吗?
+</code></pre></div>
+<ul>
+<li>
+<p>小节总结：</p>
+<ul>
+<li>
+<p>学习了服务的主要逻辑：</p>
+<ul>
+<li>主要逻辑服务接收werobot发送的请求后，根据用户id查询redis查找用户上一次说过的话，根据结果判断是否为他的第一句。</li>
+<li>如果是第一句话，直接查询数据库，判断句子中是否包含症状实体，并返回该症状连接的疾病，并填充在规则对话模版中，如果查询不到则调用Unit API返回结果。</li>
+<li>如果不是该用户的第一句话，则连同上一句话的内容一起请求句子相关模型服务，判断两句话是否讨论同一主题，如果是，则继续查询图数据库，如果不是，使用unit api返回结果。</li>
+</ul>
+</li>
+<li>
+<p>构建主要逻辑服务的步骤：</p>
+<ul>
+<li>第一步：导入必备工具和配置</li>
+<li>第二步：完成查询neo4j数据库的函数</li>
+<li>第三步：编写主要逻辑处理类</li>
+<li>第四步：编写服务中的主函数</li>
+<li>第五步：使用gunicorn启动服务</li>
+<li>第六步：编写测试脚本并进行测试</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="74">7.4 句子主题相关任务<a class="headerlink" href="#74" title="Permanent link">&para;</a></h2>
+<ul>
+<li>句子主题相关的任务的工作在我们这里使用AI模型实现，包括模型训练和使用的整个过程，因此这里内容以独立一章的形成呈现给大家，具体内容在<a href="8.html">第八章：句子主题相关任务</a></li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="6.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第六章:命名实体识别任务" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              第六章:命名实体识别任务
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="8.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 第八章:句子主题相关任务" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              第八章:句子主题相关任务
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+        <script src="js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

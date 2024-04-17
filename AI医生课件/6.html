@@ -1,0 +1,1863 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="img/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>第六章:命名实体识别任务 - AI医生 V3.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#61" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="." title="AI医生 V3.0" class="md-header__button md-logo" aria-label="AI医生 V3.0" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI医生 V3.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第六章:命名实体识别任务
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <img src="assets/images/logo.svg" height="45px" alt="logo">
+
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="AI医生 V3.0" class="md-nav__button md-logo" aria-label="AI医生 V3.0" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    AI医生 V3.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.html" class="md-nav__link">
+        第一章:背景介绍及AI医生架构
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.html" class="md-nav__link">
+        第二章:项目工具介绍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.html" class="md-nav__link">
+        第三章:neo4j图数据库
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.html" class="md-nav__link">
+        第四章:离线部分
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.html" class="md-nav__link">
+        第五章:命名实体审核任务
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第六章:命名实体识别任务
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="6.html" class="md-nav__link md-nav__link--active">
+        第六章:命名实体识别任务
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 序列标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 命名实体识别介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-crf" class="md-nav__link">
+    6.3 CRF介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-bilstm" class="md-nav__link">
+    6.4 BiLSTM介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-bilstmcrf" class="md-nav__link">
+    6.5 BiLSTM+CRF模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    6.6 模型训练
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    6.7 模型使用
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.html" class="md-nav__link">
+        第七章:在线部分
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.html" class="md-nav__link">
+        第八章:句子主题相关任务
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.html" class="md-nav__link">
+        第九章:系统联调与测试
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.html" class="md-nav__link">
+        附录:环境安装部署手册
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 序列标注
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 命名实体识别介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-crf" class="md-nav__link">
+    6.3 CRF介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-bilstm" class="md-nav__link">
+    6.4 BiLSTM介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-bilstmcrf" class="md-nav__link">
+    6.5 BiLSTM+CRF模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    6.6 模型训练
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    6.7 模型使用
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>第六章:命名实体识别任务</h1>
+
+<h2 id="61">6.1 序列标注<a class="headerlink" href="#61" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标</p>
+</li>
+<li>
+<p>知道序列标注问题主要任务</p>
+</li>
+<li>
+<p>掌握条件随机场模型概念</p>
+</li>
+<li>
+<p>能够使用条件随机场进行词性标注</p>
+</li>
+<li>
+<p>序列标注问题</p>
+</li>
+</ul>
+<p><strong>序列标注**指的是给定一个序列<span class="arithmatex"><span class="MathJax_Preview">x=x_1x_2\cdots x_n</span><script type="math/tex">x=x_1x_2\cdots x_n</script></span>，找出序列中每个元素对应标签<span class="arithmatex"><span class="MathJax_Preview">y=y_1y_2\cdots y_n</span><script type="math/tex">y=y_1y_2\cdots y_n</script></span>的问题。其中，<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>所有可能的取值集合称为**标注集</strong>。比如，前一小节中“更 高 地 举起 邓小平理论 的 伟大 旗帜”，对应的状态序列是“SSSBEBMMMESBEBE”，其中标注集是{B, M, S, E}。求解序列标注问题的模型一般称为**序列标注器**，通常由模型从一个标注数据集中学习相关知识后再进行预测。在NLP问题中，<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>通常是字符或词语，而<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>则是待预测的组词角色或词性等标签。中文分词、词性标注、命名实体识别都可以转化为序列标注问题。</p>
+<ul>
+<li>序列标注与中文分词</li>
+</ul>
+<p>考虑一个字符序列<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，想象切词器真的是拿刀切割字符串，那么每个字符串在分词是无非由两种角色，要么在则个字符后面切开，要么跳过不切。这样，中文分词就转化为标注集为{切，过}序列标注问题。只要标注集正确标注每个字符切与不切，分词器就能够按照指示切割出正确的结果。可以将序列标注看作中文分词的中间结果，往后则是存粹的字符串分割。</p>
+<p>当然分词标注集并非只有一种，前面介绍的{B, M, S, E}则是更常用的一种分词标注集。</p>
+<ul>
+<li>序列标注与词性标注</li>
+</ul>
+<p>词性标注任务是一个天然的序列标注问题：<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是单词序列，<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>是相应的词性序列。例如：参观/动词 了/助词 北京/地名 天安门/地名。词性标注集同样不是唯一的，人们根据需要制定了不同的标注集。其中最著名的当数863标注集和北大标注集，前者词性数量要少一些，颗粒度要大一些。词性标注需要综合考虑前后的单词与词性才能决定当前单词的词性。比如副词容易接续动词，“的”字之后容易出现名词。这里的“容易”其实意味着较大的概率，需要使用概率模型去模拟。</p>
+<ul>
+<li>序列标注与命名实体识别</li>
+</ul>
+<p>所谓命名实体，指的是现实存在的实体，比如人名、地名和机构名。命名实体是OOV的主要组成部分，往往也是句子中最令人关注的成分。命名实体的数量是无穷的，因为世界上每种事物都需要一个名字代表自身。比如每颗星星、每种蛋白质都有自己的名称，宇宙中的星星和蛋白质显然不可数。
+简短的人名和地名可以通过中文分词切分，然后通过词性标注来确定所属类别。但地名和机构名常常由多个单词组成（称为复合词），较难识別。例如，“联合国叙利亚问题独立国际调查委员会”。由于复合词的丰度较小，导致分词器和词性标注器很难一步到位地将其识别出来，这时常常在分词和词性标注的中间结果之上进行召回。
+考虑到字符级别中文分词和词语级别命名实体识别有着类似的特点，都是组合短单位形成长单位的问题。所以命名实体识别可以复用 BMES 标注集，并沿用中文分词的逻辑，只不过标注的对象由字符变为单词而已。唯一不同的是，命名实体识别还需要确定实体所属的类别。这个额外的要求依然是个标注问题，可以通过将命名实体类别附着到 BMES 标签来达到目的。比如，构成地名的单词标注为“B/M/E/S一地名”，以此类推。对于那些不构成命名实体的单词，则统一标注为O（Outside ），即复合词之外。例如：参观/O 了/O 北京/B-地名 天安门/E-地名。命名实体识别模块根据标注结果，将“北京”和“天安门”作为首尾组合成词，并且标注为地名。</p>
+<p>总之，序列标注问题是 NLP 中最常见的问题之一。许多应用任务都可以变换思路，转化为序列标注来解决。所以一个准确的序列标注模型非常重要，直接关系到 NLP 系统的准确率。</p>
+<h2 id="62">6.2 命名实体识别介绍<a class="headerlink" href="#62" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>了解什么是命名实体识别</li>
+<li>了解命名实体识别的作用</li>
+<li>了解命名实体识别常用方法</li>
+<li>了解医学文本特征</li>
+</ul>
+</li>
+<li>
+<p>什么是命名实体识别：</p>
+<ul>
+<li>命名实体识别(Named Entity Recognition，NER)就是从一段自然语言文本中找出相关实体，并标注出其位置以及类型。是信息提取，问答系统，句法分析，机器翻译等应用领域的重要基础工具，在自然语言处理技术走向实用化的过程中占有重要地位。包含行业，领域专有名词，如人名，地名，公司名，机构名，日期，时间，疾病名，症状名，手术名称，软件名称等。具体可参看如下示例图：</li>
+</ul>
+</li>
+</ul>
+<p><img alt="命名实体识别示例" src="img/6_1_NER_demo_1.png" /></p>
+<p><img alt="命名实体识别示例" src="img/6_1_NER_demo_2.png" /></p>
+<p><img alt="命名实体识别示例" src="img/6_1_NER_demo_3.png" /></p>
+<ul>
+<li>
+<p>命名实体识别的作用：</p>
+<ul>
+<li>识别专有名词，为文本结构化提供支持。</li>
+<li>主体识别，辅助句法分析。</li>
+<li>实体关系抽取，有利于知识推理。</li>
+</ul>
+</li>
+<li>
+<p>命名实体识别常用方法：</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>基于规则：针对有特殊上下文的实体，或实体本身有很多特征的文本，使用规则的方法简单且有效。比如抽取文本中物品价格，如果文本中所有商品价格都是“数字+元”的形式，则可以通过正则表达式”\d*.?\d+元”进行抽取。但如果待抽取文本中价格的表达方式多种多样，例如“一千八百万”，“伍佰贰拾圆”，“2000万元”，遇到这些情况就要修改规则来满足所有可能的情况。随着语料数量的增加，面对的情况也越来越复杂，规则之间也可能发生冲突，整个系统也可能变得不可维护。因此基于规则的方式比较适合半结构化或比较规范的文本中的进行抽取任务，结合业务需求能够达到一定的效果。</p>
+<ul>
+<li>优点：简单，快速。</li>
+<li>缺点：适用性差，维护成本高后期甚至不能维护。</li>
+</ul>
+</li>
+<li>
+<p>基于模型：从模型的角度来看，命名实体识别问题实际上是序列标注问题。序列标注问题指的是模型的输入是一个序列，包括文字，时间等，输出也是一个序列。针对输入序列的每一个单元，输出一个特定的标签。以中文分词任务进行举例，例如输入序列是一串文字："我是中国人", 输出序列是一串标签："OOBII", 其中"BIO"组成了一种中文分词的标签体系：B表示这个字是词的开始，I表示词的中间到结尾，O表示其他类型词。因此我们可以根据输出序列"OOBII"进行解码，得到分词结果"我\是\中国人"。</p>
+</li>
+<li>
+<p>序列标注问题涵盖了自然语言处理中的很多任务，包括语音识别，中文分词，机器翻译，命名实体识别等，而常见的序列标注模型包括HMM, CRF, RNN, LSTM, GRU等模型。</p>
+</li>
+<li>
+<p>其中在命名实体识别技术上，目前主流的技术是通过BiLSTM+CRF模型进行序列标注，也是项目中要用到的模型。</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>医学文本特征：
+    <img alt="命名实体识别示例" src="img/6_1_NER_demo.png" /></p>
+<ul>
+<li>简短精炼</li>
+<li>形容词相对较少</li>
+<li>泛化性相对较小</li>
+<li>医学名词错字率比较高</li>
+<li>同义词、简称比较多</li>
+</ul>
+</li>
+<li>
+<p>小节总结：</p>
+<ul>
+<li>学习了什么是命名实体识别</li>
+<li>学习了命名实体识别的作用</li>
+<li>学习了命名实体识别常用方法</li>
+<li>学习了医学文本特征</li>
+</ul>
+</li>
+</ul>
+<h2 id="63-crf">6.3 CRF介绍<a class="headerlink" href="#63-crf" title="Permanent link">&para;</a></h2>
+<ul>
+<li>学习目标：</li>
+<li>了解CRF的概念和作用</li>
+<li>了解转移概率矩阵</li>
+<li>
+<p>了解发射概率矩阵</p>
+</li>
+<li>
+<p>CRF的概念和作用：</p>
+</li>
+<li>
+<p>CRF(全称Conditional Random Fields), 条件随机场。是给定输入序列的条件下，求解输出序列的条件概率分布模型。</p>
+</li>
+<li>
+<p>下面举两个应用场景的例子：</p>
+<ul>
+<li>
+<p>场景一：假设有一堆日常生活的给小朋友排拍的视频片段，可能的状态有睡觉、吃饭、喝水、洗澡、刷牙、玩耍等，大部分情况，我们是能够识别出视频片段的状态。但如果你只是看到一小段拿杯子的视频，在没有前后相连的视频作为前后文参照的情况下，我们很难知道拿杯子是要刷牙还是喝水。这时，可以用到CRF模型。</p>
+</li>
+<li>
+<p>场景二：假设有分好词的句子，我们要判断每个词的词性，那么对于一些词来说，如果我们不知道相邻词的词性的情况下，是很难准确判断每个词的词性的。这时，我们也可以用到CRF.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>基本定义：我们将随机变量的集合称为随机过程。由一个空间变量索引的随机过程，我们将其称为随机场。上面的例子中，做词性标注时，可以将{名词、动词、形容词、副词}这些词性定义为随机变量，然后从中选择相应的词性，而这组随机变量在某种程度上遵循某种概率分布，将这些词性按照对应的概率赋值给相应的词，就完成了句子的词性标注。</p>
+</li>
+<li>
+<p>关于条件随机场与马尔科夫假设：</p>
+</li>
+<li>
+<p>前面课程我们介绍过马尔科夫假设，也就是当前位置的取值只和与它相邻的位置的值有关，和它不相邻的位置的值无关。</p>
+</li>
+<li>应用到我们上面的词性标注例子中，可以理解为当前词的词性是根据前一个词和后一个词的词性来决定的，等效于从词性前后文的概率来给出当前词的词性判断结果。</li>
+<li>
+<p>现实中可以做如下假设：假设一个动词或者副词后面不会连接同样的动词或者副词，这样的概率很高。那么，可以假定这种给定隐藏状态(也就是词性序列)的情况下，来计算观测状态的计算过程。本质上CRF模型考虑到了观测状态这个先验条件，这也是条件随机场中的条件一词的含义。</p>
+</li>
+<li>
+<p>转移概率矩阵：</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>首先假设我们需要标注的实体类型有一下几类：</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><code>{&quot;O&quot;: 0, &quot;B-dis&quot;: 1, &quot;I-dis&quot;: 2, &quot;B-sym&quot;: 3, &quot;I-sym&quot;: 4}
+
+# 其中dis表示疾病(disease), sym表示症状(symptom), B表示命名实体开头，I表示命名实体中间到结尾，O表示其他类型。
+</code></pre></div>
+<blockquote>
+<ul>
+<li>因此我们很容易知道每个字的可能标注类型有以上五种可能性，那么在一个句子中，由上一个字到下一个字的概率乘积就有5 × 5种可能性，具体见下图所示：</li>
+</ul>
+</blockquote>
+<p><center><img alt="avatar" src="img/transition.jpg" /></center></p>
+<blockquote>
+<ul>
+<li>最终训练出来结果大致会如上图所示，其中下标索引为(i, j)的方格代表如果当前字符是第i行表示的标签，那么下一个字符表示第j列表示的标签所对应的概率值。以第二行为例，假设当前第i个字的标签为B-dis, 那么第i+1个字最大可能出现的概率应该是I-dis.</li>
+</ul>
+</blockquote>
+<ul>
+<li>发射概率矩阵：</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>发射概率，是指已知当前标签的情况下，对应所出现字符的概率。通俗理解就是当前标签比较可能出现的文字有哪些，及其对应出现的概率。</p>
+</li>
+<li>
+<p>下面是几段医疗文本数据的标注结果：</p>
+</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/ner_demo01.png" /></p>
+<p><img alt="" src="img/ner_demo02.png" /></p>
+<p><img alt="" src="img/ner_demo03.png" /></p>
+<p><img alt="" src="img/ner_demo04.png" /></p>
+<blockquote>
+<ul>
+<li>可以得到以上句子的转移矩阵概率如下：</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/transition_matrix.png" /></p>
+<blockquote>
+<ul>
+<li>对应的发射矩阵可以理解为如下图所示结果：</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/emission_matrix.png" /></p>
+<ul>
+<li>小节总结：</li>
+<li>学习了CRF的概念和作用<ul>
+<li>概念：条件随机场，一种条件概率分布模型</li>
+<li>作用：增加了先验条件，可以更好的完成实体序列的识别</li>
+</ul>
+</li>
+<li>学习了转移概率矩阵</li>
+<li>学习了发射概率矩阵</li>
+</ul>
+<h2 id="64-bilstm">6.4 BiLSTM介绍<a class="headerlink" href="#64-bilstm" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>了解BiLSTM网络结构。</li>
+<li>掌握BiLSTM模型实现。</li>
+</ul>
+</li>
+<li>
+<p>BiLSTM网络结构：</p>
+<ul>
+<li>所谓的BiLSTM，就是(Bidirectional LSTM)双向LSTM. 单向的LSTM模型只能捕捉到从前向后传递的信息，而双向的网络可以同时捕捉正向信息和反向信息，使得对文本信息的利用更全面，效果也更好。</li>
+<li>在BiLSTM网络最终的输出层后面增加了一个线性层，用来将BiLSTM产生的隐藏层输出结果投射到具有某种表达标签特征意义的区间，具体如下图所示：</li>
+</ul>
+<p><img alt="模型结构图" src="img/bilstm.jpg" /></p>
+</li>
+<li>
+<p>BiLSTM模型实现：</p>
+<ul>
+<li>第一步：实现类的初始化和网络结构的搭建。</li>
+<li>第二步：实现网络的前向计算。</li>
+<li>第三步：实现网络的预测函数。</li>
+</ul>
+</li>
+<li>
+<p>第一步：实现类的初始化和网络结构的搭建。</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 本段代码构建类BiLSTM, 完成初始化和网络结构的搭建</span>
+<span class="c1"># 总共3层：词嵌入层，双向LSTM层，全连接线性层</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="k">class</span> <span class="nc">BiLSTM</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">label_num</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BiLSTM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># 用于将输入转换为词向量</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">num_embeddings</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+        <span class="c1"># 用于提取输入的双向语义表示向量</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">blstm</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+                             <span class="n">hidden_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+                             <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># 用于将 self.blstm 的输出向量映射为标签 logits</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liner</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="n">label_num</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>输入参数：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 参数1:码表与id对照</span>
+<span class="n">char_to_id</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;双&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;肺&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;见&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;多&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;发&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;斑&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;片&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+              <span class="s2">&quot;状&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;稍&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;高&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;密&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;度&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;影&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;。&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">}</span>
+
+<span class="c1"># 参数2:标签码表对照</span>
+<span class="n">tag_to_id</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;O&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B-dis&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;I-dis&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="c1"># 参数：字向量维度</span>
+<span class="c1"># EMBEDDING_DIM = 256</span>
+
+<span class="c1"># 参数：隐层维度</span>
+<span class="c1"># HIDDEN_DIM = 512</span>
+
+<span class="c1"># 参数：堆叠 LSTM 层数</span>
+<span class="c1"># NUM_LAYERS = 1</span>
+</code></pre></div>
+<ul>
+<li>调用：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 初始化模型</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">vocab_size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">char_to_id</span><span class="p">),</span>
+               <span class="n">label_num</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tag_to_id</span><span class="p">),)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>输出效果：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>BiLSTM(
+  (embed): Embedding(14, 256)
+  (blstm): LSTM(256, 512, bidirectional=True)
+  (liner): Linear(in_features=1024, out_features=5, bias=True)
+)
+</code></pre></div>
+<ul>
+<li>第二步：实现网络的前向计算。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># 参数：句子长度</span>
+    <span class="c1"># SENTENCE_LENGTH = 20</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+
+        <span class="c1"># 将输入的 token 索引转换为词向量</span>
+        <span class="n">outputs_embed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="c1"># 由于填充了很多0，此处将0进行压缩</span>
+        <span class="n">outputs_packd</span> <span class="o">=</span> <span class="n">pack_padded_sequence</span><span class="p">(</span><span class="n">outputs_embed</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+        <span class="c1"># BiLSTM 用于提取双向语义，提取每个句子中的 token 表示</span>
+        <span class="n">outputs_blstm</span><span class="p">,</span> <span class="p">(</span><span class="n">hn</span><span class="p">,</span> <span class="n">cn</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blstm</span><span class="p">(</span><span class="n">outputs_packd</span><span class="p">)</span>
+        <span class="c1"># outputs_paded 表示填充后的 BiLSTM 对每个 token 的输出</span>
+        <span class="c1"># outputs_length 表示每个句子实际的长度</span>
+        <span class="n">outputs_paded</span><span class="p">,</span> <span class="n">output_lengths</span> <span class="o">=</span> <span class="n">pad_packed_sequence</span><span class="p">(</span><span class="n">outputs_blstm</span><span class="p">)</span>
+        <span class="n">outputs_paded</span> <span class="o">=</span> <span class="n">outputs_paded</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># 线性层计算，计算出发射矩阵，形状：(16, 57, 7)</span>
+        <span class="n">output_logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">liner</span><span class="p">(</span><span class="n">outputs_paded</span><span class="p">)</span>
+
+        <span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">output_logit</span><span class="p">,</span> <span class="n">outputs_length</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">output_logits</span><span class="p">,</span> <span class="n">output_lengths</span><span class="p">):</span>
+            <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_logit</span><span class="p">[:</span><span class="n">outputs_length</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">outputs</span>
+</code></pre></div>
+<ul>
+<li>第三步：实现网络的预测函数。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+
+        <span class="c1"># 将输入的 token 索引转换为词向量</span>
+        <span class="n">outputs_embed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="c1"># 增加一个 batch 维度在 1 位置</span>
+        <span class="n">outputs_embed</span> <span class="o">=</span> <span class="n">outputs_embed</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># 对每个 Token 进行语义表示</span>
+        <span class="n">outputs_blstm</span><span class="p">,</span> <span class="p">(</span><span class="n">hn</span><span class="p">,</span> <span class="n">cn</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blstm</span><span class="p">(</span><span class="n">outputs_embed</span><span class="p">)</span>
+        <span class="c1"># 把 1 位置的 batch 值去掉</span>
+        <span class="n">outputs_blstm</span> <span class="o">=</span> <span class="n">outputs_blstm</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># 计算每个 Token 的发射分数</span>
+        <span class="n">output_liner</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">liner</span><span class="p">(</span><span class="n">outputs_blstm</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">output_liner</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>小节总结：</p>
+<ul>
+<li>了解了BiLSTM网络结构<ul>
+<li>设置隐藏层维度的时候，需要将hidden_size // 2</li>
+<li>总共有3层需要构建，分别是词嵌入层，双向LSTM层，全连接线性层</li>
+<li>在代码层面，双向LSTM就是将nn.LSTM()中的参数bidirectional设置为True</li>
+</ul>
+</li>
+<li>掌握了BiLSTM网络的代码实现<ul>
+<li>构建类BiLSTM的初始化函数</li>
+<li>添加文本向量化的辅助函数，注意padding填充为相同长度的Tensor</li>
+<li>要注意forward函数中不同张量的形状约定</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="65-bilstmcrf">6.5 BiLSTM+CRF模型<a class="headerlink" href="#65-bilstmcrf" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>掌握BiLSTM+CRF模型结构</li>
+<li>掌握损失函数的定义</li>
+<li>掌握BiLSTM_CRF模型的代码实现</li>
+</ul>
+</li>
+<li>
+<p>BiLSTM+CRF模型结构：</p>
+<ul>
+<li>1, 模型的标签定义与整体架构</li>
+<li>2, 模型内部的分层展开</li>
+<li>3, CRF层的作用</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>1, 模型的标签定义与整体架构：假设我们的数据集中有两类实体-人名，地名，与之对应的在训练集中有5类标签如下所示：</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><code>B-Person, I-Person, B-Organization, I-Organization, O
+
+# B-Person: 人名的开始
+# I-Person: 人名的中间部分
+# B-Organization: 地名的开始
+# I-Organization: 地名的中间部分
+# O: 其他非人名，非地名的标签
+</code></pre></div>
+<blockquote>
+<ul>
+<li>
+<p>假设一个句子有5个单词构成，(w0, w1, w2, w3, w4), 每一个单元都代表着由字嵌入构成的向量。
+其中字嵌入是随机初始化的，词嵌入是通过数据训练得到的，所有的嵌入在训练过程中都会调整到最优解。</p>
+</li>
+<li>
+<p>这些字嵌入或词嵌入作为BiLSTM+CRF模型的输入，而输出的是句子中每个单元的标签。</p>
+</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/32.jpeg" /></p>
+<blockquote>
+<ul>
+<li>2, 模型内部的分层展开：整个模型明显有两层，第一层是BiLSTM层，第二层是CRF层，将层的内部展开如下图所示：</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/33.jpeg" /></p>
+<blockquote>
+<ul>
+<li>BiLSTM层的输出为每一个标签的预测分值，例如对于单词w0, BiLSTM层输出是</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><code>1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization), 0.05 (O)
+</code></pre></div>
+<blockquote>
+<ul>
+<li>
+<p>这些分值将作为CRF层的输入。</p>
+</li>
+<li>
+<p>3, CRF层的作用：如果没有CRF层，也可以训练一个BiLSTM命名实体识别模型，如下图所示：</p>
+</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/34.jpeg" /></p>
+<blockquote>
+<ul>
+<li>
+<p>由于BiLSTM的输出为单元的每一个标签分值，我们可以挑选分值最高的一个作为该单元的标签。例如，对于单词w0, "B-Person"的分值-1.5是所有标签得分中最高的，因此可以挑选"B-Person"作为单词w0的预测标签。同理，可以得到w1 - "I-Person", w2 - "O", w3 - "B-Organization", w4 - "O"</p>
+</li>
+<li>
+<p>虽然按照上述方法，在没有CRF层的条件下我们也可以得到x中每个单元的预测标签，但是不能保证标签的预测每次都是正确的。如果出现下图的BiLSTM层输出结果，则明显预测是错误的。</p>
+</li>
+</ul>
+</blockquote>
+<p><img alt="avatar" src="img/35.jpeg" /></p>
+<blockquote>
+<ul>
+<li>
+<p>CRF层能从训练数据中获得约束性的规则。</p>
+</li>
+<li>
+<p>CRF层可以为最后预测的标签添加一些约束来保证预测的标签是合法的。在训练数据训练的过程中，这些约束可以通过CRF层自动学习到。</p>
+</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><code>1: 句子中的第一个词总是以标签&quot;B-&quot;或者&quot;O&quot;开始，而不是&quot;I-&quot;开始。
+2: 标签&quot;B-label1 I-label2 I-label3 ......&quot;, 其中的label1, label2, label3应该属于同一类实体。
+比如，&quot;B-Person I-Person&quot;是合法的序列，但是&quot;B-Person I-Organization&quot;是非法的序列。
+3: 标签序列&quot;O I-label&quot;是非法序列，任意实体标签的首个标签应该是&quot;B-&quot;, 而不是&quot;I-&quot;.
+比如，&quot;O B-label&quot;才是合法的序列
+</code></pre></div>
+<blockquote>
+<ul>
+<li>有了上述这些约束，标签序列的预测中非法序列出现的概率将会大大降低。</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>损失函数的定义：</p>
+<ul>
+<li>
+<p>BiLSTM层的输出维度是tag_size, 也就是每个单词w_i映射到tag的发射概率值，假设BiLSTM的输出矩阵是P, 其中P(i,j)代表单词w_i映射到tag_j的非归一化概率。对于CRF层，假设存在一个转移矩阵A, 其中A(i,j)代表tag_j转移到tag_i的概率。</p>
+</li>
+<li>
+<p>对于输入序列X对应的输出tag序列y, 定义分数如下(本质上就是发射概率和转移概率的累加和):</p>
+</li>
+<li>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+  S(X,y)=\sum_{i=0}^{n}A_{y_i,y_{i+1}}+\sum_{i=1}^nP_{i,y_i}
+  </div>
+<script type="math/tex; mode=display">
+  S(X,y)=\sum_{i=0}^{n}A_{y_i,y_{i+1}}+\sum_{i=1}^nP_{i,y_i}
+  </script>
+</div>
+</li>
+<li>
+<p>利用softmax函数，为每一个正确的tag序列y定义一个概率值，在真实的训练中，只需要最大化似然概率p(y|X)即可，具体使用对数似然如下：</p>
+</li>
+<li>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+  -\log(p(y|X)) = -\log(\frac{e^{S(X,y)}}{\sum_{\hat{y}\in Y_X } e^{S(X,\hat{y})}})\\
+  = \log(\sum_{\hat{y}\in Y_X} e^{S(X, \hat{y})})-S(X, y)
+  </div>
+<script type="math/tex; mode=display">
+  -\log(p(y|X)) = -\log(\frac{e^{S(X,y)}}{\sum_{\hat{y}\in Y_X } e^{S(X,\hat{y})}})\\
+  = \log(\sum_{\hat{y}\in Y_X} e^{S(X, \hat{y})})-S(X, y)
+  </script>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>BiLSTM+CRF模型的实现：</p>
+<ul>
+<li>第一步：构建CRF模型</li>
+<li>第二步：计算单条路径的分数</li>
+<li>第三步：计算全部路径的分数</li>
+<li>第四步：计算损失值</li>
+<li>第五步：维特比算法的实现</li>
+<li>第六步：构造NER模型组合全部功能</li>
+</ul>
+</li>
+<li>
+<p>第一步：构建CRF模型</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 导入相关包与模块</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">from</span> <span class="nn">torch.nn.utils.rnn</span> <span class="kn">import</span> <span class="n">pack_padded_sequence</span>
+<span class="kn">from</span> <span class="nn">torch.nn.utils.rnn</span> <span class="kn">import</span> <span class="n">pad_packed_sequence</span>
+
+<span class="c1"># 定义计算设备</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">CRF</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label_num</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CRF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># 转移矩阵的标签数量</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">=</span> <span class="n">label_num</span>
+        <span class="c1"># [TAG1, TAG2, TAG3...STAR, END]</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="c1"># 开始和结束标签</span>
+        <span class="n">START_TAG</span><span class="p">,</span> <span class="n">ENG_TAG</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">START_TAG</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">ENG_TAG</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
+        <span class="c1"># 定义一个较小值用于扩展发射和转移矩阵时填充</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1000.0</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>第二步：计算单条路径的分数</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">_get_real_path_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emission_score</span><span class="p">,</span> <span class="n">sequence_label</span><span class="p">):</span>
+
+        <span class="c1"># 计算标签的数量</span>
+        <span class="n">seq_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence_label</span><span class="p">)</span>
+        <span class="c1"># 计算真实路径发射分数</span>
+        <span class="n">real_emission_score</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">emission_score</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">seq_length</span><span class="p">)),</span> <span class="n">sequence_label</span><span class="p">])</span>
+        <span class="c1"># 在真实标签序列前后增加一个 start 和 end</span>
+        <span class="n">b_id</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">e_id</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">sequence_label_expand</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">b_id</span><span class="p">,</span> <span class="n">sequence_label</span><span class="p">,</span> <span class="n">e_id</span><span class="p">])</span>
+        <span class="c1"># 计算真实路径转移分数</span>
+        <span class="n">pre_tag</span> <span class="o">=</span> <span class="n">sequence_label_expand</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">seq_length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))]</span>
+        <span class="n">now_tag</span> <span class="o">=</span> <span class="n">sequence_label_expand</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">seq_length</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))]</span>
+        <span class="n">real_transition_score</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span><span class="p">[</span><span class="n">pre_tag</span><span class="p">,</span> <span class="n">now_tag</span><span class="p">])</span>
+        <span class="c1"># 计算真实路径分数</span>
+        <span class="n">real_path_score</span> <span class="o">=</span> <span class="n">real_emission_score</span> <span class="o">+</span> <span class="n">real_transition_score</span>
+
+        <span class="k">return</span> <span class="n">real_path_score</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>第三步：计算全部路径的分数</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">_log_sum_exp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="c1"># 计算 e 的指数时，每个元素都减去最大值，避免数值溢出</span>
+        <span class="n">max_score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">max_score_expand</span> <span class="o">=</span> <span class="n">max_score</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">max_score</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">score</span> <span class="o">-</span> <span class="n">max_score_expand</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_expand_emission_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emission_score</span><span class="p">):</span>
+
+        <span class="c1"># 计算标签的数量</span>
+        <span class="n">sequence_length</span> <span class="o">=</span> <span class="n">emission_score</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># 扩展时会增加 START 和 END 标签，定义该标签的值</span>
+        <span class="n">b_s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">]],</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">e_s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="c1"># 扩展发射矩阵为 (self.label_num + 2, self.label_num + 2)</span>
+        <span class="n">expand_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="n">sequence_length</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">emission_score_expand</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">emission_score</span><span class="p">,</span> <span class="n">expand_matrix</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">emission_score_expand</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">b_s</span><span class="p">,</span> <span class="n">emission_score_expand</span><span class="p">,</span> <span class="n">e_s</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">emission_score_expand</span>
+
+    <span class="k">def</span> <span class="nf">_get_total_path_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emission_score</span><span class="p">):</span>
+
+        <span class="c1"># 扩展发射分数矩阵</span>
+        <span class="n">emission_score_expand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_emission_matrix</span><span class="p">(</span><span class="n">emission_score</span><span class="p">)</span>
+        <span class="c1"># 计算所有路径分数</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">emission_score_expand</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">emission_score_expand</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="c1"># 扩展 pre 维度</span>
+            <span class="n">pre_expand</span> <span class="o">=</span> <span class="n">pre</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="c1"># 扩展 obs 维度</span>
+            <span class="n">obs_expand</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="c1"># 扩展之后 obs pre 和 self.transition_scores 维度相同</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">obs_expand</span> <span class="o">+</span> <span class="n">pre_expand</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span>
+            <span class="c1"># 计算对数分数</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_sum_exp</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_sum_exp</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>第四步：计算损失值</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emission_scores</span><span class="p">,</span> <span class="n">sequence_labels</span><span class="p">):</span>
+
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">emission_score</span><span class="p">,</span> <span class="n">sequence_label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">emission_scores</span><span class="p">,</span> <span class="n">sequence_labels</span><span class="p">):</span>
+            <span class="c1"># 计算真实路径得分</span>
+            <span class="n">real_path_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_real_path_score</span><span class="p">(</span><span class="n">emission_score</span><span class="p">,</span> <span class="n">sequence_label</span><span class="p">)</span>
+            <span class="c1"># 计算所有路径分数</span>
+            <span class="n">total_path_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_total_path_score</span><span class="p">(</span><span class="n">emission_score</span><span class="p">)</span>
+            <span class="c1"># 最终损失</span>
+            <span class="n">finish_loss</span> <span class="o">=</span> <span class="n">total_path_score</span> <span class="o">-</span> <span class="n">real_path_score</span>
+            <span class="c1"># 累加不同句子的损失</span>
+            <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">finish_loss</span>
+
+        <span class="k">return</span> <span class="n">total_loss</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>第五步：维特比算法的实现</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emission_score</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;使用维特比算法，结合发射矩阵+转移矩阵计算最优路径&quot;&quot;&quot;</span>
+
+        <span class="c1"># 扩展发射分数矩阵</span>
+        <span class="n">emission_score_expand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_emission_matrix</span><span class="p">(</span><span class="n">emission_score</span><span class="p">)</span>
+
+        <span class="c1"># 计算分数</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">emission_score_expand</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">emission_score_expand</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+
+            <span class="c1"># 扩展 pre 维度</span>
+            <span class="n">pre_expand</span> <span class="o">=</span> <span class="n">pre</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="c1"># 扩展 obs 维度</span>
+            <span class="n">obs_expand</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="c1"># 扩展之后 obs pre 和 self.transition_scores 维度相同</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">obs_expand</span> <span class="o">+</span> <span class="n">pre_expand</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">transition_scores</span>
+
+            <span class="c1"># 获得当前多分支中最大值的分支索引</span>
+            <span class="n">value</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="c1"># 拼接每一个时间步的结果</span>
+            <span class="n">ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">ids</span><span class="p">,</span> <span class="n">index</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">val</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="c1"># 计算分数</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="c1"># 先取出最后一个的最大值</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">best_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="c1"># 再回溯前一个最大值</span>
+        <span class="c1"># 由于为了方便拼接，我们在第一个位置默认填充了0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">ids</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+            <span class="c1"># 获得分数最大的索引</span>
+            <span class="c1"># index = torch.argmax(v)</span>
+            <span class="c1"># 获得索引对应的标签ID</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">best_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+        <span class="n">best_path</span> <span class="o">=</span> <span class="n">best_path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">best_path</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置/data/doctor_offline/ner_model/bilstm_crf.py</p>
+</li>
+<li>
+<p>第六步：构造NER模型组合全部功能</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">NER</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">label_num</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NER</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span> <span class="o">=</span> <span class="n">vocab_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span> <span class="o">=</span> <span class="n">label_num</span>
+
+        <span class="c1"># 双向长短记忆网络</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bilstm</span> <span class="o">=</span> <span class="n">BiLSTM</span><span class="p">(</span><span class="n">vocab_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">label_num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span><span class="p">)</span>
+        <span class="c1"># 条件随机场网络层</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crf</span> <span class="o">=</span> <span class="n">CRF</span><span class="p">(</span><span class="n">label_num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label_num</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+
+        <span class="c1"># 计算输入批次样本的每个 Token 的分数，即：每个句子的发射矩阵</span>
+        <span class="n">emission_scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bilstm</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+        <span class="c1"># 计算批次样本的总损失</span>
+        <span class="n">batch_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">crf</span><span class="p">(</span><span class="n">emission_scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+        <span class="c1"># 返回总损失</span>
+        <span class="k">return</span> <span class="n">batch_loss</span>
+
+    <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_apth</span><span class="p">):</span>
+        <span class="n">save_info</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;vocab_size&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="s1">&#39;label_num&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_num</span><span class="p">},</span>
+            <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_info</span><span class="p">,</span> <span class="n">save_apth</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+
+        <span class="c1"># 计算输入批次样本的每个 Token 的分数，即：每个句子的发射矩阵</span>
+        <span class="n">emission_scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bilstm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="c1"># viterbi_decode 函数接收的发射矩阵为二维的 (seq_len, scores)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">crf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">emission_scores</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">logits</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/bilstm_crf.py</li>
+</ul>
+<h2 id="66">6.6 模型训练<a class="headerlink" href="#66" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>掌握数据的预处理流程</li>
+<li>掌握生成批量训练数据的方法</li>
+<li>掌握模型训练代码</li>
+</ul>
+</li>
+<li>
+<p>模型训练的流程</p>
+<ul>
+<li>第一步：熟悉字符到数字编码的码表</li>
+<li>第二步：熟悉训练数据集的样式和含义解释</li>
+<li>第三步：生成批量训练数据</li>
+<li>第四步：完成训练模型的代码。</li>
+<li>第五步：完成准确率和召回率的评估代码</li>
+<li>第六步：绘制损失曲线和评估曲线图</li>
+</ul>
+</li>
+</ul>
+<p>第一步：熟悉字符到数字编码的码表。</p>
+<div class="highlight"><pre><span></span><code># 代表了数据集中所有字符到数字编码的字典映射
+# 码表可以包含中文简体、繁体、英文大小写字母、数字、中英文标点符号等等
+# &lt;PAD&gt;为填充标识，训练时需要将句子转化成矩阵，而句子长短不一，需要做padding处理
+
+{
+    &quot;&lt;PAD&gt;&quot;: 0,
+    &quot;厑&quot;: 1,
+    &quot;吖&quot;: 2,
+    &quot;呵&quot;: 3,
+    &quot;啊&quot;: 4,
+    &quot;嗄&quot;: 5,
+    &quot;嬶&quot;: 6,
+    ...
+}
+</code></pre></div>
+<ul>
+<li>码表所在位置：/data/doctor_offline/ner_model/data/char_to_id.json</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 这里不使用码表原始编码，后续使用BertTokenizer进行编码</span>
+<span class="k">def</span> <span class="nf">build_vocab</span><span class="p">():</span>
+    <span class="n">chat_to_id</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/char_to_id.json&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+    <span class="n">unique_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chat_to_id</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">unique_words</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;[UNK]&#39;</span><span class="p">)</span>
+    <span class="n">unique_words</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;[PAD]&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 将字写入到 data/bilstm_crf_vocab_aidoc.txt 词典文件中</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/bilstm_crf_vocab_aidoc.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">unique_words</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/build_vocab.py</li>
+</ul>
+<p>第二步：熟悉训练数据集的样式和含义解释。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;女&quot;</span><span class="p">,</span> <span class="s2">&quot;性&quot;</span><span class="p">,</span> <span class="s2">&quot;，&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;岁&quot;</span><span class="p">,</span> <span class="s2">&quot;，&quot;</span><span class="p">,</span> <span class="s2">&quot;农&quot;</span><span class="p">,</span> <span class="s2">&quot;民&quot;</span><span class="p">,</span> <span class="s2">&quot;，&quot;</span><span class="p">,</span> <span class="s2">&quot;双&quot;</span><span class="p">,</span> <span class="s2">&quot;滦&quot;</span><span class="p">,</span> <span class="s2">&quot;区&quot;</span><span class="p">,</span> <span class="s2">&quot;应&quot;</span><span class="p">,</span> <span class="s2">&quot;营&quot;</span><span class="p">,</span> <span class="s2">&quot;子&quot;</span><span class="p">,</span> <span class="s2">&quot;村&quot;</span><span class="p">,</span> <span class="s2">&quot;人&quot;</span><span class="p">,</span> <span class="s2">&quot;，&quot;</span><span class="p">,</span> <span class="s2">&quot;主&quot;</span><span class="p">,</span> <span class="s2">&quot;因&quot;</span><span class="p">,</span> <span class="s2">&quot;右&quot;</span><span class="p">,</span> <span class="s2">&quot;髋&quot;</span><span class="p">,</span> <span class="s2">&quot;部&quot;</span><span class="p">,</span> <span class="s2">&quot;摔&quot;</span><span class="p">,</span> <span class="s2">&quot;伤&quot;</span><span class="p">,</span> <span class="s2">&quot;后&quot;</span><span class="p">,</span> <span class="s2">&quot;疼&quot;</span><span class="p">,</span> <span class="s2">&quot;痛&quot;</span><span class="p">,</span> <span class="s2">&quot;肿&quot;</span><span class="p">,</span> <span class="s2">&quot;胀&quot;</span><span class="p">,</span> <span class="s2">&quot;，&quot;</span><span class="p">,</span> <span class="s2">&quot;活&quot;</span><span class="p">,</span> <span class="s2">&quot;动&quot;</span><span class="p">,</span> <span class="s2">&quot;受&quot;</span><span class="p">,</span> <span class="s2">&quot;限&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;小&quot;</span><span class="p">,</span> <span class="s2">&quot;时&quot;</span><span class="p">,</span> <span class="s2">&quot;于&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;；&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;：&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;入&quot;</span><span class="p">,</span> <span class="s2">&quot;院&quot;</span><span class="p">,</span> <span class="s2">&quot;。&quot;</span><span class="p">],</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">]}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>训练数据集的含义解释：</p>
+<ul>
+<li>每一行包含一个字以及与之对应的标签</li>
+<li>json格式</li>
+<li>标签说明：<ul>
+<li>B-dis: 疾病实体名词起始标识</li>
+<li>I-dis: 疾病实体名词中间到结尾标识</li>
+<li>B-sym: 症状实体名词起始标识</li>
+<li>I-sym: 症状实体名词中间到结尾标识</li>
+<li>O:     其他非实体部分标识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>数据集所在位置：/data/doctor_offline/ner_model/data/train.txt /data/doctor_offline/ner_model/data/valid.txt</p>
+</li>
+<li>
+<p>将训练数据集转换为csv格式：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">load_corpus</span><span class="p">():</span>
+    <span class="c1"># 定义训练数据集和验证数据集的路径</span>
+    <span class="n">train_data_file_path</span> <span class="o">=</span> <span class="s1">&#39;ai_doc_data/train.txt&#39;</span>
+    <span class="n">validate_file_path</span> <span class="o">=</span> <span class="s1">&#39;ai_doc_data/validate.txt&#39;</span>
+
+    <span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="c1"># 因为每行都是一个样本，所以按行遍历即可</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">train_data_file_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">):</span>
+        <span class="c1"># 每行样本数据都是json字符串，可以直接进行loads,  然后追加进结果列表中</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="c1"># print(type(data))</span>
+        <span class="n">data_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]))</span>
+        <span class="n">data_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]))</span>
+    <span class="n">train_data_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">train_data_df</span><span class="p">[</span><span class="s1">&#39;data_inputs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_inputs</span>
+    <span class="n">train_data_df</span><span class="p">[</span><span class="s1">&#39;data_labels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_labels</span>
+    <span class="n">train_data_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/01-训练集_aidoc.csv&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;训练集数据量：&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data_df</span><span class="p">))</span>
+
+    <span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">validate_file_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">data_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]))</span>
+        <span class="n">data_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]))</span>
+    <span class="c1"># 存储测试集数据</span>
+    <span class="n">test_data_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">test_data_df</span><span class="p">[</span><span class="s1">&#39;data_inputs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_inputs</span>
+    <span class="n">test_data_df</span><span class="p">[</span><span class="s1">&#39;data_labels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_labels</span>
+    <span class="n">test_data_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/02-测试集_aidoc.csv&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;测试集数据量：&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data_df</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/load_corpus.py</li>
+</ul>
+<p>第三步：再将csv文件转成DatasetDict格式，生成批量训练数据。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DatasetDict</span>
+
+
+<span class="k">def</span> <span class="nf">encode_label</span><span class="p">():</span>
+
+    <span class="n">label_to_index</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;O&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B-dis&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;I-dis&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+    <span class="c1"># 将 csv 数据转换成 Dataset 类型</span>
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/01-训练集_aidoc.csv&#39;</span><span class="p">)</span>
+    <span class="n">valid_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/02-测试集_aidoc.csv&#39;</span><span class="p">)</span>
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+    <span class="n">valid_data</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">valid_data</span><span class="p">)</span>
+    <span class="n">corpus_data</span> <span class="o">=</span> <span class="n">DatasetDict</span><span class="p">({</span><span class="s1">&#39;train&#39;</span><span class="p">:</span> <span class="n">train_data</span><span class="p">,</span> <span class="s1">&#39;valid&#39;</span><span class="p">:</span> <span class="n">valid_data</span><span class="p">})</span>
+
+    <span class="c1"># 将标签数据转换为索引表示</span>
+    <span class="k">def</span> <span class="nf">data_handler</span><span class="p">(</span><span class="n">data_labels</span><span class="p">,</span> <span class="n">data_inputs</span><span class="p">):</span>
+
+        <span class="n">data_label_ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">data_labels</span><span class="p">:</span>
+            <span class="n">label_ids</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+                <span class="n">label_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label_to_index</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+            <span class="n">data_label_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label_ids</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;data_labels&#39;</span><span class="p">:</span> <span class="n">data_label_ids</span><span class="p">,</span> <span class="s1">&#39;data_inputs&#39;</span><span class="p">:</span> <span class="n">data_inputs</span><span class="p">}</span>
+
+    <span class="n">corpus_data</span> <span class="o">=</span> <span class="n">corpus_data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">data_handler</span><span class="p">,</span> <span class="n">input_columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data_labels&#39;</span><span class="p">,</span> <span class="s1">&#39;data_inputs&#39;</span><span class="p">],</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># 数据存储</span>
+    <span class="n">corpus_data</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="s1">&#39;data/bilstm_crf_data_aidoc&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/encode_label.py</li>
+<li>生成了新的数据集文件：/data/doctor_offline/ner_model/data/bilstm_crf_data_aidoc</li>
+</ul>
+<p>第四步：完成训练模型的代码。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">torch.nn.utils.rnn</span> <span class="kn">import</span> <span class="n">pad_sequence</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_from_disk</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertTokenizer</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">bilstm_crf</span> <span class="kn">import</span> <span class="n">NER</span>
+<span class="kn">from</span> <span class="nn">evaluate</span> <span class="kn">import</span> <span class="n">evaluate</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">pad_batch_inputs</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">):</span>
+
+    <span class="c1"># 函数需要返回一个按照内容长度从大到小排序过的，sentence 和 label, 还要返回 sentence 长度</span>
+    <span class="c1"># 将批次数据的输入和标签值分开，并计算批次的输入长度</span>
+    <span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">data_labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">data_input</span><span class="p">,</span> <span class="n">data_label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+
+        <span class="c1"># 对输入句子进行编码</span>
+        <span class="n">data_input_encode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data_input</span><span class="p">,</span>
+                                             <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">,</span>
+                                             <span class="n">add_special_tokens</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">data_input_encode</span> <span class="o">=</span> <span class="n">data_input_encode</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">data_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_input_encode</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+
+        <span class="c1"># 去除多余空格，计算句子长度</span>
+        <span class="n">data_input</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_input</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="n">data_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_input</span><span class="p">))</span>
+
+        <span class="c1"># 将标签转换为张量</span>
+        <span class="n">data_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">data_label</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">))</span>
+
+    <span class="c1"># 对一个批次的内容按照长度从大到小排序，符号表示降序</span>
+    <span class="n">sorted_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data_length</span><span class="p">))</span>
+
+    <span class="c1"># 根据长度的索引进行排序</span>
+    <span class="n">sorted_inputs</span><span class="p">,</span> <span class="n">sorted_labels</span><span class="p">,</span> <span class="n">sorted_length</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">sorted_index</span><span class="p">:</span>
+        <span class="n">sorted_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">sorted_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_labels</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">sorted_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_length</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+    <span class="c1"># 对张量进行填充，使其变成长度一样的张量</span>
+    <span class="n">pad_inputs</span> <span class="o">=</span> <span class="n">pad_sequence</span><span class="p">(</span><span class="n">sorted_inputs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pad_inputs</span><span class="p">,</span> <span class="n">sorted_labels</span><span class="p">,</span> <span class="n">sorted_length</span>
+
+<span class="n">label_to_index</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;O&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B-dis&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;I-dis&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">train</span><span class="p">():</span>
+
+    <span class="c1"># 读取数据集</span>
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">load_from_disk</span><span class="p">(</span><span class="s1">&#39;data/bilstm_crf_data_aidoc&#39;</span><span class="p">)[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+    <span class="c1"># 构建分词器</span>
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="p">(</span><span class="n">vocab_file</span><span class="o">=</span><span class="s1">&#39;data/bilstm_crf_vocab_aidoc.txt&#39;</span><span class="p">)</span>
+    <span class="c1"># 构建模型</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NER</span><span class="p">(</span><span class="n">vocab_size</span><span class="o">=</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">label_num</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">label_to_index</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="c1"># model_param = torch.load(&#39;data/BiLSTM-CRF-final.bin&#39;)</span>
+    <span class="c1"># model = NER(**model_param[&#39;init&#39;]).cuda(device)</span>
+    <span class="c1"># model.load_state_dict(model_param[&#39;state&#39;])</span>
+
+    <span class="c1"># 批次大小</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="c1"># 优化器</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">3e-5</span><span class="p">)</span>
+    <span class="c1"># 训练轮数</span>
+    <span class="n">num_epoch</span> <span class="o">=</span> <span class="mi">700</span>
+
+    <span class="c1"># train history</span>
+    <span class="n">train_history_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># valid history</span>
+    <span class="n">valid_history_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 开始训练</span>
+    <span class="k">def</span> <span class="nf">start_train</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">):</span>
+
+        <span class="c1"># 对批量数据进行填充对齐</span>
+        <span class="n">pad_inputs</span><span class="p">,</span> <span class="n">sorted_labels</span><span class="p">,</span> <span class="n">sorted_length</span> <span class="o">=</span> \
+            <span class="n">pad_batch_inputs</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+
+        <span class="c1"># 计算损失</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">pad_inputs</span><span class="p">,</span> <span class="n">sorted_labels</span><span class="p">,</span> <span class="n">sorted_length</span><span class="p">)</span>
+        <span class="c1"># 梯度清零</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="c1"># 反向传播</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="c1"># 参数更新</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="c1"># 统计损失</span>
+        <span class="k">nonlocal</span> <span class="n">total_loss</span>
+        <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_epoch</span><span class="p">):</span>
+        <span class="c1"># 统计损失</span>
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="c1"># 开始训练</span>
+        <span class="n">train_data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">start_train</span><span class="p">,</span>
+                       <span class="n">input_columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data_inputs&#39;</span><span class="p">,</span> <span class="s1">&#39;data_labels&#39;</span><span class="p">],</span>
+                       <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                       <span class="n">fn_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tokenizer&#39;</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">},</span>
+                       <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;epoch: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># 打印损失</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;epoch: </span><span class="si">%d</span><span class="s1"> loss: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">total_loss</span><span class="p">))</span>
+
+        <span class="c1"># evaluate train data</span>
+        <span class="c1"># train_eval_result = evaluate(model, tokenizer, train_data)</span>
+        <span class="c1"># train_eval_result.append(total_loss)</span>
+        <span class="c1"># train_history_list.append(train_eval_result)</span>
+
+        <span class="c1"># evaluate valid data</span>
+        <span class="c1"># valid_history_list.append(evaluate(model, tokenizer))</span>
+
+        <span class="c1"># 存储模型</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">save_model</span><span class="p">(</span><span class="s1">&#39;data/BiLSTM-CRF-</span><span class="si">%d</span><span class="s1">.bin&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># plot history curve</span>
+    <span class="c1"># save_train_history_image(train_history_list, valid_history_list, &quot;log/bilstm_crf_train_plot.png&quot;)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">train</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/train.py</li>
+</ul>
+<p>第五步：完成准确率和召回率的评估代码。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_from_disk</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertTokenizer</span>
+<span class="kn">from</span> <span class="nn">bilstm_crf</span> <span class="kn">import</span> <span class="n">NER</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># 读取测试数据</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">load_from_disk</span><span class="p">(</span><span class="s1">&#39;data/bilstm_crf_data_aidoc&#39;</span><span class="p">)[</span><span class="s1">&#39;valid&#39;</span><span class="p">]</span>
+
+    <span class="c1"># 1. 计算各个不同类别总实体数量</span>
+
+    <span class="c1"># 计算测试集实体数量</span>
+    <span class="n">total_entities</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;DIS&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;SYM&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="c1"># indicators</span>
+    <span class="n">indicators</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">calculate_handler</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">):</span>
+        <span class="c1"># 将 data_inputs 转换为没有空格隔开的句子</span>
+        <span class="n">data_inputs</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_inputs</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+        <span class="c1"># 提取句子中的实体</span>
+        <span class="n">extract_entities</span> <span class="o">=</span> <span class="n">extract_decode</span><span class="p">(</span><span class="n">data_labels</span><span class="p">,</span> <span class="n">data_inputs</span><span class="p">)</span>
+        <span class="c1"># 统计每种实体的数量</span>
+        <span class="k">nonlocal</span> <span class="n">total_entities</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">extract_entities</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">total_entities</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># 统计不同实体的数量</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">calculate_handler</span><span class="p">,</span> <span class="n">input_columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data_inputs&#39;</span><span class="p">,</span> <span class="s1">&#39;data_labels&#39;</span><span class="p">])</span>
+    <span class="c1"># print(total_entities)</span>
+
+    <span class="c1"># 2. 计算模型预测的各个类别实体数量</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model_param</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data/BiLSTM-CRF-final.bin&#39;</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">NER</span><span class="p">(</span><span class="o">**</span><span class="n">model_param</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_param</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span>
+
+    <span class="c1"># 构建分词器</span>
+    <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="p">(</span><span class="n">vocab_file</span><span class="o">=</span><span class="s1">&#39;data/bilstm_crf_vocab_aidoc.txt&#39;</span><span class="p">)</span>
+
+    <span class="n">model_entities</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;DIS&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;SYM&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">start_evaluate</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">):</span>
+
+        <span class="c1"># 对输入文本进行分词</span>
+        <span class="n">model_inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data_inputs</span><span class="p">,</span> <span class="n">add_special_tokens</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">model_inputs</span> <span class="o">=</span> <span class="n">model_inputs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="c1"># 文本送入模型进行计算</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">label_list</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">)</span>
+
+        <span class="c1"># 统计预测的实体数量</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_inputs</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+        <span class="c1"># 从预测结果提取实体名字</span>
+        <span class="n">extract_entities</span> <span class="o">=</span> <span class="n">extract_decode</span><span class="p">(</span><span class="n">label_list</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="k">nonlocal</span> <span class="n">model_entities</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">extract_entities</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">model_entities</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># 统计预测不同实体的数量</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">start_evaluate</span><span class="p">,</span> <span class="n">input_columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;data_inputs&#39;</span><span class="p">],</span> <span class="n">batched</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># print(model_entities)</span>
+
+    <span class="c1"># 3. 统计每个类别的召回率</span>
+    <span class="n">total_pred_correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_true_correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">total_entities</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+
+        <span class="c1"># 获得当前 key 类别真实和模型预测实体列表</span>
+        <span class="n">true_entities</span> <span class="o">=</span> <span class="n">total_entities</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">true_entities_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">true_entities</span><span class="p">)</span>
+        <span class="n">pred_entities</span> <span class="o">=</span> <span class="n">model_entities</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">pred_entities_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pred_entities</span><span class="p">)</span>
+
+        <span class="c1"># 分解预测实体中，pred_correct 表示预测正确，pred_incorrect 表示预测错误</span>
+        <span class="n">pred_correct</span><span class="p">,</span> <span class="n">pred_incorrect</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">pred_entity</span> <span class="ow">in</span> <span class="n">pred_entities</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pred_entity</span> <span class="ow">in</span> <span class="n">true_entities</span><span class="p">:</span>
+                <span class="n">pred_correct</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+            <span class="n">pred_incorrect</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># 计算共预测正确多少个实体</span>
+        <span class="n">total_pred_correct</span> <span class="o">+=</span> <span class="n">pred_correct</span>
+        <span class="c1"># 计算共有多少个真实的实体</span>
+        <span class="n">total_true_correct</span> <span class="o">+=</span> <span class="n">true_entities_num</span>
+
+        <span class="c1"># 计算精度</span>
+        <span class="c1"># 精确率：预测结果为正例样本中真实为正例的比例</span>
+        <span class="c1"># 召回率：真实为正例的样本中预测结果为正例的比例</span>
+        <span class="n">recall</span> <span class="o">=</span> <span class="n">pred_correct</span> <span class="o">/</span> <span class="n">true_entities_num</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="n">pred_correct</span> <span class="o">/</span> <span class="n">pred_entities_num</span>
+        <span class="n">f1</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">recall</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">precision</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">/</span> <span class="p">(</span><span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;查全率：</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">recall</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;查准率：</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">precision</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;f1: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="n">indicators</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">f1</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;准确率：</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">total_pred_correct</span> <span class="o">/</span> <span class="n">total_true_correct</span><span class="p">))</span>
+    <span class="n">indicators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_pred_correct</span> <span class="o">/</span> <span class="n">total_true_correct</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">indicators</span>
+
+
+<span class="k">def</span> <span class="nf">extract_decode</span><span class="p">(</span><span class="n">label_list</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param label_list: 模型输出的包含标签序列的一维列表</span>
+<span class="sd">    :param text: 模型输入的句子</span>
+<span class="sd">    :return: 提取到的实体名字</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">label_to_index</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;O&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B-dis&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;I-dis&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B-sym&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;I-sym&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+    <span class="n">B_DIS</span><span class="p">,</span> <span class="n">I_DIS</span> <span class="o">=</span> <span class="n">label_to_index</span><span class="p">[</span><span class="s1">&#39;B-dis&#39;</span><span class="p">],</span> <span class="n">label_to_index</span><span class="p">[</span><span class="s1">&#39;I-dis&#39;</span><span class="p">]</span>
+    <span class="n">B_SYM</span><span class="p">,</span> <span class="n">I_SYM</span> <span class="o">=</span> <span class="n">label_to_index</span><span class="p">[</span><span class="s1">&#39;B-sym&#39;</span><span class="p">],</span> <span class="n">label_to_index</span><span class="p">[</span><span class="s1">&#39;I-sym&#39;</span><span class="p">]</span>
+
+    <span class="c1"># 提取连续的标签代表的实体</span>
+    <span class="k">def</span> <span class="nf">extract_word</span><span class="p">(</span><span class="n">start_index</span><span class="p">,</span> <span class="n">next_label</span><span class="p">):</span>
+
+        <span class="c1"># index 表示最后索引的位置</span>
+        <span class="n">index</span><span class="p">,</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">start_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">text</span><span class="p">[</span><span class="n">start_index</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">label_list</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">label_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="n">next_label</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">entity</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+
+    <span class="c1"># 存储提取的命名实体</span>
+    <span class="n">extract_entites</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;DIS&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;SYM&#39;</span><span class="p">:</span> <span class="p">[]},</span> <span class="mi">0</span>
+    <span class="c1"># 映射下一个持续的标签</span>
+    <span class="n">next_label</span> <span class="o">=</span> <span class="p">{</span><span class="n">B_DIS</span><span class="p">:</span> <span class="n">I_DIS</span><span class="p">,</span> <span class="n">B_SYM</span><span class="p">:</span> <span class="n">I_SYM</span><span class="p">}</span>
+    <span class="c1"># 映射词的所属类别</span>
+    <span class="n">word_class</span> <span class="o">=</span> <span class="p">{</span><span class="n">B_DIS</span><span class="p">:</span> <span class="s1">&#39;DIS&#39;</span><span class="p">,</span> <span class="n">B_SYM</span><span class="p">:</span> <span class="s1">&#39;SYM&#39;</span><span class="p">}</span>
+
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">label_list</span><span class="p">):</span>
+        <span class="c1"># 获得当前位置的标签</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">label_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">next_label</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="c1"># 将当前位置和对应的下一个持续标签传递到 extract_word 函数</span>
+            <span class="n">index</span><span class="p">,</span> <span class="n">word</span> <span class="o">=</span> <span class="n">extract_word</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">next_label</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+            <span class="n">extract_entites</span><span class="p">[</span><span class="n">word_class</span><span class="p">[</span><span class="n">label</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">extract_entites</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">evaluate</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>代码实现位置：/data/doctor_offline/ner_model/evaluate.py</li>
+</ul>
+<p>第六步：绘制损失曲线和评估曲线图</p>
+<ul>
+<li>训练和验证准确率对照曲线：</li>
+</ul>
+<p><img alt="acc" src="img/bilstm_crf_train_Acc.png" /></p>
+<blockquote>
+<ul>
+<li>分析：</li>
+<li>首先，准确率是指识别**正确的实体**占**识别出的实体**中的比例。</li>
+<li>根据对照曲线来看，整体学习结果都在趋于准确率上升方向增加，而且随着批次的增加曲线震动相对平稳，不过可能由于训练与验证样本分布不均衡或者噪声等原因，导致最终验证集的准确度没有达到与训练集相同的情况。</li>
+<li>最终的训练集和验证集的召回率分别在：0.85和0.78左右。</li>
+</ul>
+</blockquote>
+<ul>
+<li>训练和验证召回率对照曲线：</li>
+</ul>
+<p><img alt="recall" src="img/bilstm_crf_train_Recall.png" /></p>
+<blockquote>
+<ul>
+<li>分析：</li>
+<li>在此召回率是指**识别正确的实体**占当前批次所包含的**所有实体总数**的比例。</li>
+<li>关于训练和验证召回率对照曲线，可以看出召回率的变化相对比较平滑，基本上也在40步左右趋于稳定。</li>
+<li>最终的训练集和验证集的召回率分别在：0.83和0.75左右。</li>
+</ul>
+</blockquote>
+<ul>
+<li>训练和验证F1值对照曲线：</li>
+</ul>
+<p><img alt="F1" src="img/bilstm_crf_train_F1.png" /></p>
+<blockquote>
+<ul>
+<li>分析：</li>
+<li>F1值主要是指训练效果而言，在不多识别实体的情况下同时提高准确度的衡量指标。</li>
+<li>其公式为：2×准确率×召回率 / (准确率**+**召回率)</li>
+<li>从曲线可见整体F1值上升与损失、召回率的曲线比较接近，说明在识别出的实体中，正确率比较问题，不过根据前面的准确度来分析，可能在识别过程中，增加了识别出的实体个数而导致不稳定。从这方面来说，可以验证样本不均衡问题以及噪声对模型的影响还是比较大的。</li>
+<li>从整体而言，F1值基本也在第40步之后趋于稳定，最终的训练集和验证集的结果在：0.85和0.75左右。</li>
+</ul>
+</blockquote>
+<ul>
+<li>小节总结：<ul>
+<li>学习了数据预处理的相关方法</li>
+<li>学习生成批量训练数据的方法</li>
+<li>学习了模型训练相关代码的实现<ul>
+<li>精确率和召回率评估的代码</li>
+<li>模型构建类的全部内部函数代码</li>
+<li>启动训练流程的代码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="67">6.7 模型使用<a class="headerlink" href="#67" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>学习目标：</p>
+<ul>
+<li>实体抽取</li>
+</ul>
+</li>
+<li>
+<p>实体抽取</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertTokenizer</span>
+<span class="kn">from</span> <span class="nn">bilstm_crf</span> <span class="kn">import</span> <span class="n">NER</span>
+<span class="kn">from</span> <span class="nn">evaluate</span> <span class="kn">import</span> <span class="n">extract_decode</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">entity_extract</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="c1"># 构建分词器</span>
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="p">(</span><span class="n">vocab_file</span><span class="o">=</span><span class="s1">&#39;data/bilstm_crf_vocab_aidoc.txt&#39;</span><span class="p">)</span>
+    <span class="c1"># 初始化模型</span>
+    <span class="n">model_param</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data/BiLSTM-CRF-final.bin&#39;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NER</span><span class="p">(</span><span class="o">**</span><span class="n">model_param</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_param</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span>
+
+    <span class="c1"># 我们先按字将其分开，并在字之间添加空格，便于 Bert 分词器能够准确按字分割</span>
+    <span class="n">input_text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+    <span class="n">model_inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">add_special_tokens</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">model_inputs</span> <span class="o">=</span> <span class="n">model_inputs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">extract_decode</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_text</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+
+<span class="k">def</span> <span class="nf">batch_entity_extract</span><span class="p">(</span><span class="n">data_path</span><span class="p">):</span>
+
+    <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_path</span><span class="p">)):</span>
+        <span class="c1"># 拼装全路径</span>
+        <span class="n">fullpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+
+        <span class="c1"># 定义输出结果文件</span>
+        <span class="n">entities_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prediction_result_path</span><span class="p">,</span> <span class="n">fn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="s1">&#39;csv&#39;</span><span class="p">)),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="c1"># 读取文件内容</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="c1"># 调用单个预测模型，输出为目标劳累型实体文本列表</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="n">entity_extract</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+            <span class="c1"># 写入识别结果文件</span>
+            <span class="n">entities_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entities</span><span class="p">[</span><span class="s1">&#39;SYM&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;batch_predict Finished&#39;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">batch_entity_extract</span><span class="p">(</span><span class="s1">&#39;data/unstructured/norecognite&#39;</span><span class="p">)</span>
+    <span class="c1"># text = &quot;本病是由DNA病毒的单纯疱疹病毒所致。人类单纯疱疹病毒分为两型，&quot; \</span>
+    <span class="c1">#           &quot;即单纯疱疹病毒Ⅰ型（HSV-Ⅰ）和单纯疱疹病毒Ⅱ型（HSV-Ⅱ）。&quot; \</span>
+    <span class="c1">#           &quot;Ⅰ型主要引起生殖器以外的皮肤黏膜（口腔黏膜）和器官（脑）的感染。&quot; \</span>
+    <span class="c1">#           &quot;Ⅱ型主要引起生殖器部位皮肤黏膜感染。&quot; \</span>
+    <span class="c1">#           &quot;病毒经呼吸道、口腔、生殖器黏膜以及破损皮肤进入体内，&quot; \</span>
+    <span class="c1">#           &quot;潜居于人体正常黏膜、血液、唾液及感觉神经节细胞内。&quot; \</span>
+    <span class="c1">#           &quot;当机体抵抗力下降时，如发热胃肠功能紊乱、月经、疲劳等时，&quot; \</span>
+    <span class="c1">#           &quot;体内潜伏的HSV被激活而发病。&quot;</span>
+    <span class="c1"># result = entity_extract(text)</span>
+    <span class="c1"># print(result)</span>
+</code></pre></div>
+<ul>
+<li>
+<p>代码实现位置：/data/doctor_offline/ner_model/entity_extract.py</p>
+</li>
+<li>
+<p>输出效果：将识别结果保存至prediction_result_path指定的目录下，名称与源文件一致，内容为每行存储识别实体名称</p>
+</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="5.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第五章:命名实体审核任务" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              第五章:命名实体审核任务
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="7.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 第七章:在线部分" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              第七章:在线部分
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+        <script src="js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
